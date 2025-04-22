@@ -1,0 +1,279 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png"> 
+            </div>
+            <div class="menu">
+                <div id="menu">
+                    <div class="menu-inner">
+                        <a href="#" class="closeicon">&rarr;</a>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="ct.html">Category</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <ul>
+                    <li><a href="bookt.html">Book Table</a></li>
+                    <li><a href="#menu" class="menuicon">&#9776;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+    <div id="header">
+        <h1>Dessert Delights</h1>
+        <p>Savor the sweetness of every moment!</p>
+    </div>
+
+    <section id="popular-desserts" class="food-section">
+        <h2>Popular Desserts</h2>
+        <div class="food-grid">
+            <div class="food-card">
+                <img src="df1.jpg" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>₹100</p>
+                <button onclick="placeOrder('Gulab Jamun', '₹100')">Order Now</button>
+            </div>
+            <div class="food-card">
+                <img src="df2.jpg" alt="Rasgulla">
+                <h3>Rasgulla</h3>
+                <p>₹120</p>
+                <button onclick="placeOrder('Rasgulla', '₹120')">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="famous-desserts" class="food-section">
+        <h2>Famous Desserts</h2>
+        <div class="food-grid">
+            <div class="food-card">
+                <img src="df3.jpg" alt="Kaju Barfi">
+                <h3>Kaju Barfi</h3>
+                <p>₹180</p>
+                <button onclick="placeOrder('Kaju Barfi', '₹180')">Order Now</button>
+            </div>
+            <div class="food-card">
+                <img src="df4.jpg" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>₹90</p>
+                <button onclick="placeOrder('Jalebi', '₹90')">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="confirmation-message" id="confirmation-message">
+        <h3>Order Placed Successfully!</h3>
+        <p id="order-details"></p>
+        <button onclick="closeMessage()">OK</button>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <div class="col-foot">
+                    <h2>About Us</h2>
+                    <p>If you are going to use of lorem Ipsum need to be sure there isn't hidden of text. If you are going to use of Lorem Ipsum need to be sure there isn't hidden of text.</p>
+                </div>
+                <div class="col-foot">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="ct.html">Category</a></li>
+                        <li><a href ="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-foot"> 
+                    <h2>Opening Timing</h2>
+                    <table>
+                        <tr>
+                            <td>Mon-Fri.....</td>
+                            <td>10:00 AM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday.....</td>
+                            <td>10:00 AM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday.....</td>
+                            <td>Holiday</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-foot">
+                    <h2>Contact Us</h2>
+    
+                    <ul class="contactus">
+                        <li>H.NO-47 RHO HOUSE, DNYANESHOR NAGAR, 431105</li>
+                        <li>sarthakdnyane@gmail.com</li>
+                        <li>+91 8888026923</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html><style>/* General Styles */
+
+/* By Idea  */
+
+@media screen and (max-width: 1492px) {
+    body {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    body {
+        width: fit-content;
+    }
+
+    .book {
+        width: max-content;
+    }
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+#header {
+    text-align: center;
+    background-color: #ffffff;
+    color: #212121;
+    padding: 20px 0;
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+#header p {
+    margin: 5px 0 0;
+    font-size: 18px;
+}
+
+/* Section Styles */
+.food-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.food-section h2 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Food Grid Styles */
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.food-card {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.food-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.food-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.food-card h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+.food-card p {
+    color: #555;
+}
+
+.food-card button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.food-card button:hover {
+    background-color: #218838;
+}
+
+/* Confirmation Message */
+.confirmation-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.confirmation-message h3 {
+    margin: 0 0 10px;
+    color: #28a745;
+}
+
+.confirmation-message button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}</style><script>function placeOrder(name, price) {
+    const message = document.getElementById("confirmation-message");
+    const orderDetails = document.getElementById("order-details");
+    orderDetails.innerText = `Order Details:\nItem: ${name}\nPrice: ${price}`;
+    message.style.display = "block";
+}
+
+function closeMessage() {
+    const message = document.getElementById("confirmation-message");
+    message.style.display = "none";
+}</script>

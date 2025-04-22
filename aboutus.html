@@ -1,0 +1,281 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <div class="menu">
+            <div id="menu">
+                <div class="menu-inner">
+                    <a href="#" class="closeicon">&rarr;</a>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="ct.html">Category</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="book">
+            <ul>
+                <li><a href="bookt.html"> Book Table </a></li>
+                <li><a href="#menu" class="menuicon">&#9776;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</header>
+  <div class="about-container">
+    <div class="about-header">
+      <h1>About Us</h1>
+      <p class="subtitle">"Savor the Tradition, Celebrate the Taste"</p>
+    </div>
+    <section class="about-content">
+      <div class="image-section">
+        <img src="logo.png" alt="Swaad Sanskruti Logo">
+      </div>
+      <div class="text-section">
+        <h2>Who We Are</h2>
+        <p>
+          Welcome to <strong>Swaad Sanskruti</strong>, where India's culinary heritage comes alive. Explore recipes, cultural tales, and flavorful experiences to honor the legacy of Indian cuisine.
+        </p>
+        <h2>Our Mission</h2>
+        <p>
+          Our mission is to bridge tradition and innovation--bringing the diverse and rich flavors of India to everyone. Whether it's recipes, table booking, or cultural insights, Swaad Sanskruti celebrates the magic of food.
+        </p>
+        <h2>What We Offer</h2>
+        <ul>
+          <li>Authentic recipes with cultural backgrounds</li>
+          <li>Festival-based food guides</li>
+          <li>Interactive restaurant table booking systems</li>
+          <li>Celebrations of India's culinary diversity</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  
+<footer>
+  <div class="container">
+      <div class="foot">
+          <div class="col-foot">
+              <h2>About Us</h2>
+              <p>If you are going to use of lorem Ipsum need to be sure there isn't hidden of text. If you are going to use of Lorem Ipsum need to be sure there isn't hidden of text.</p>
+          </div>
+          <div class="col-foot">
+              <h2>Quick Links</h2>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="ct.html">Category</a></li>
+                  <li><a href ="menu.html">Menu</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </div>
+          <div class="col-foot"> 
+              <h2>Opening Timing</h2>
+              <table>
+                  <tr>
+                      <td>Mon-Fri.....</td>
+                      <td>10:00 AM - 10:00 PM</td>
+                  </tr>
+                  <tr>
+                      <td>Saturday.....</td>
+                      <td>10:00 AM - 6:00 PM</td>
+                  </tr>
+                  <tr>
+                      <td>Sunday.....</td>
+                      <td>Holiday</td>
+                  </tr>
+              </table>
+          </div>
+          <div class="col-foot">
+              <h2>Contact Us</h2>
+
+              <ul class="contactus">
+                <li>H.NO-47 RHO HOUSE, DNYANESHOR NAGAR, 431105</li>
+                <li>sarthakdnyane@gmail.com</li>
+                <li>+91 8888026923</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+</body>
+</html><style> /* styles.css */
+
+  /* By Idea  */
+
+@media  screen and (max-width:1492px){
+
+  body{
+      width: auto;
+  }
+}
+@media  screen and (max-width:330px){
+
+  body{
+      width: fit-content;
+  }
+  .book{
+    width: max-content;
+  }
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  color: #333;
+}
+
+.about-container {
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-header {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  color: #ff5e62;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.image-section {
+  flex: 1;
+  text-align: center;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.text-section {
+  flex: 2;
+  padding: 10px;
+}
+
+.text-section h2 {
+  font-size: 2rem;
+  color: #ff5e62;
+  margin-bottom: 15px;
+}
+
+.text-section p, ul {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.about-footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #3f3f3f;
+  border-top: 1px solid #e1e1e1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    gap: 20px;
+  }
+
+  .text-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .text-section p, ul {
+    font-size: 1rem;
+  }
+
+  .image-section img {
+    max-width: 90%;
+  }
+
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .text-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-section p, ul {
+    font-size: 0.9rem;
+  }
+}</style>

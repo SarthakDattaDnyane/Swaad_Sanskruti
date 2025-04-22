@@ -1,0 +1,319 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png"> 
+        </div>
+        <div class="menu">
+            <div id="menu">
+                <div class="menu-inner">
+                    <a href="#" class="closeicon">&rarr;</a>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="ct.html">Category</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="book">
+            <ul>
+                <li><a href="bookt.html">Book Table</a></li>
+                <li><a href="#menu" class="menuicon">&#9776;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</header>
+
+  <div class="category-container">
+    <div class="category-header">
+      <h1>Explore Categories</h1>
+      <p class="subtitle">"Discover the diversity of Indian cuisine"</p>
+    </div>
+    <section class="category-grid">
+      <div class="category-card">
+        <img src="north.jpg" alt="North Indian">
+        <h2>North Indian</h2>
+        <p>Rich curries and buttery breads like naan and parathas.</p>
+        <button class="category-btn" onclick="showFoodDetails('North Indian', 'Rich curries and buttery breads like naan and parathas.', 450)">Order Now</button>
+        <a class="category-btn" href="nif.html" style="color: white;">Explore More</a>
+      </div>
+      <div class="category-card">
+        <img src="south.jpg" alt="South Indian">
+        <h2>South Indian</h2>
+        <p>Tangy sambhar, crispy dosas, and coconut chutney.</p>
+        <button class="category-btn" onclick="showFoodDetails('South Indian', 'Tangy sambhar, crispy dosas, and coconut chutney.', 350)">Order Now</button>
+        <a class="category-btn" href="sif.html" style="color: white;">Explore More</a>
+      </div>
+      <div class="category-card">
+        <img src="street.jpg" alt="Street Food">
+        <h2>Street Food</h2>
+        <p>Quick bites like pani puri, vada pav, and samosas.</p>
+        <button class="category-btn" onclick="showFoodDetails('Street Food', 'Quick bites like pani puri, vada pav, and samosas.', 200)">Order Now</button>
+        <a class="category-btn" href="sf.html" style="color: white;">Explore More</a>
+      </div>
+      <div class="category-card">
+        <img src="desserts.jpg" alt="Desserts">
+        <h2>Desserts</h2>
+        <p>Sweet treats like gulab jamun, jalebi, and rasgulla.</p>
+        <button class="category-btn" onclick="showFoodDetails('Desserts', 'Sweet treats like gulab jamun, jalebi, and rasgulla.', 300)">Order Now</button>
+        <a class="category-btn" href="df.html" style="color: white;">Explore More</a>
+      </div>
+    </section>
+    <!-- Food Details Modal -->
+    <div id="food-modal" class="modal">
+      <div class="modal-content">
+        <h2 id="food-title"></h2>
+        <p id="food-description"></p>
+        <p><strong>Price: ₹<span id="food-price"></span></strong></p>
+        <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+    <!-- Success Alert -->
+    <div id="success-alert" class="modal">
+      <div class="modal-content">
+        <h2>Order Successful!</h2>
+        <p>Your order has been placed successfully. Enjoy your meal!</p>
+        <button class="close-btn" onclick="closeModal()">OK</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  
+<footer>
+  <div class="container">
+      <div class="foot">
+          <div class="col-foot">
+              <h2>About Us</h2>
+              <p>If you are going to use of lorem Ipsum need to be sure there isn't hidden of text. If you are going to use of Lorem Ipsum need to be sure there isn't hidden of text.</p>
+          </div>
+          <div class="col-foot">
+              <h2>Quick Links</h2>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="ct.html">Category</a></li>
+                  <li><a href ="menu.html">Menu</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </div>
+          <div class="col-foot"> 
+              <h2>Opening Timing</h2>
+              <table>
+                  <tr>
+                      <td>Mon-Fri.....</td>
+                      <td>10:00 AM - 10:00 PM</td>
+                  </tr>
+                  <tr>
+                      <td>Saturday.....</td>
+                      <td>10:00 AM - 6:00 PM</td>
+                  </tr>
+                  <tr>
+                      <td>Sunday.....</td>
+                      <td>Holiday</td>
+                  </tr>
+              </table>
+          </div>
+          <div class="col-foot">
+              <h2>Contact Us</h2>
+
+              <ul class="contactus">
+                <li>H.NO-47 RHO HOUSE, DNYANESHOR NAGAR, 431105</li>
+                <li>sarthakdnyane@gmail.com</li>
+                <li>+91 8888026923</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+</body>
+</html><style>/* styles.css */
+
+  
+  /* By Idea  */
+
+@media  screen and (max-width:1492px){
+
+  body{
+      width: auto;
+  }
+}
+@media  screen and (max-width:330px){
+
+  body{
+      width: fit-content;
+  }
+  .book{
+    width: max-content;
+  }
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #333;
+}
+
+.category-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.category-header {
+  padding: 20px 0;
+}
+
+.category-header h1 {
+  font-size: 3rem;
+  color: #ff5e62;
+  margin-bottom: 10px;
+}
+
+.category-header .subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.category-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;  
+}
+
+.category-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.category-card h2 {
+  color: #ff3636;
+  margin: 15px 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.category-card h2:hover{
+  color: rgb(63, 42, 255);
+}
+
+.category-card p {
+  padding: 0 15px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.category-btn {
+  display: inline-block;
+  background: linear-gradient(to right, hsl(0, 90%, 45%), #ff0202);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.category-footer {
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #414141;
+  border-top: 1px solid #e1e1e1;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.place-order-btn, .close-btn {
+  display: inline-block;
+  background: linear-gradient(to right, hsl(0, 90%, 45%), #ff0202);  color: #fff;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-order-btn:hover, .close-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}</style><script>// script.js
+function showFoodDetails(title, description, price) {
+  document.getElementById("food-title").textContent = title;
+  document.getElementById("food-description").textContent = description;
+  document.getElementById("food-price").textContent = price;
+  document.getElementById("food-modal").style.display = "flex";
+}
+
+function placeOrder() {
+  document.getElementById("food-modal").style.display = "none";
+  document.getElementById("success-alert").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("food-modal").style.display = "none";
+  document.getElementById("success-alert").style.display = "none";
+}</script>

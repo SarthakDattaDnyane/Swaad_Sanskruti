@@ -1,0 +1,237 @@
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="booking-container">
+        <h1>Table Booking System</h1>
+        <form id="booking-form">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <input type="number" id="people" placeholder="Number of people" min="1" required>
+            <button type="submit" id="submit-btn">Book Table</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+<style>
+    /* styles.css */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #4c5dfd, #13c2f2);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .booking-container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        width: 350px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        color: #fff;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    input {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #333;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    input:focus {
+        outline: none;
+        border: 2px solid #4c5dfd;
+    }
+
+    button {
+        background: linear-gradient(to right, #4c5dfd, #13c2f2);
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+
+    /* Alert Box Styling */
+    .alert-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        color: #333;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        z-index: 9999;
+    }
+
+    .alert-box p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .alert-box a {
+        background: linear-gradient(to right, #13c2f2, #4c5dfd);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .alert-box button a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .alert-box button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+</style>
+<script>// script.js
+    const form = document.getElementById( "booking-form" );
+    const nameInput = document.getElementById( "name" );
+    const dateInput = document.getElementById( "date" );
+    const timeInput = document.getElementById( "time" );
+    const peopleInput = document.getElementById( "people" );
+
+    const bookedTables = [];
+    const bookingData = new Map(); // Securely store booking data without leaking
+
+    form.addEventListener( "submit", ( e ) =>
+    {
+        e.preventDefault();
+
+        const userName = nameInput.value.trim();
+        const bookingDate = dateInput.value;
+        const bookingTime = timeInput.value;
+        const numberOfPeople = peopleInput.value.trim();
+
+        if ( !userName || !bookingDate || !bookingTime || !numberOfPeople )
+        {
+            alert( "Please fill in all fields correctly!" );
+            return;
+        }
+
+        if ( bookingData.has( userName ) )
+        {
+            alert( `Error: ${ userName }, you have already booked a table!` );
+            return;
+        }
+
+        const randomTableNo = generateUniqueTableNo();
+        if ( randomTableNo === null )
+        {
+            alert( "All tables are booked. Try again later!" );
+            return;
+        }
+
+        // Securely store booking details
+        bookingData.set( userName, {
+            tableNo: randomTableNo,
+            date: bookingDate,
+            time: bookingTime,
+            people: numberOfPeople,
+        } );
+
+        bookedTables.push( randomTableNo );
+
+        // Show alert message with booking details
+        const message = `Booking Confirmed!\n\nName: ${ userName }\nDate: ${ bookingDate }\nTime: ${ bookingTime }\nPeople: ${ numberOfPeople }\nTable No: ${ randomTableNo }`;
+        displayAlert( message );
+
+        // Clear form fields
+        nameInput.value = "";
+        dateInput.value = "";
+        timeInput.value = "";
+        peopleInput.value = "";
+    } );
+
+    function generateUniqueTableNo ()
+    {
+        const availableTables = Array.from( { length: 49 }, ( _, i ) => i + 2 ).filter(
+            ( tableNo ) => !bookedTables.includes( tableNo )
+        );
+        if ( availableTables.length === 0 ) return null;
+
+        const randomIndex = Math.floor( Math.random() * availableTables.length );
+        return availableTables[ randomIndex ];
+    }
+
+    function displayAlert ( message )
+    {
+        const alertBox = document.createElement( "div" );
+        alertBox.className = "alert-box";
+        alertBox.innerHTML = `<p>${ message.replace( /\n/g, '<br>' ) }</p><a id="alert-ok" href="index.html">OK</a>`;
+        document.body.appendChild( alertBox );
+
+        document.getElementById( "alert-ok" ).addEventListener( "click", () =>
+        {
+            alertBox.remove();
+        } );
+    }</script>
